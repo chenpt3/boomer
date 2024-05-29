@@ -1,0 +1,118 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+:root {
+    --border-radius: 5px;
+    --box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+
+    --header-background-color: #e0e0e0;
+    --main-background-color: #ececec;
+    --aside-background-color: #ababab;
+
+    --text-color: #202020;
+}
+
+body.dark {
+    --header-background-color: #282c34;
+    --main-background-color: #282c34;
+    --aside-background-color: #282c34;
+
+    --text-color: #ffffff;
+}
+
+body.hebrew {
+    direction: rtl;
+}
+
+.App.hebrew .App-content-grid {
+    grid-template-columns: 1fr 5fr 2fr;
+}
+
+.App {
+    display: grid;
+    grid-template-rows: 100px 1fr;
+    background-color: #fafafa;
+    min-height: 100vh;
+    color: var(--text-color);
+    transition: color 0.3s ease;
+}
+  
+.App-content-grid {
+    display: grid;
+    grid-template-columns: 2fr 5fr 1fr;
+}
+
+.App-left-aside {
+    background-color: var(--aside-background-color);
+    padding: 2rem;
+    color: var(--text-color);
+    transition: background-color 0.3s ease;
+    min-width: 250px;
+    max-width: 400px;
+}
+
+.App-right-aside {
+    background-color: var(--aside-background-color);
+    padding: 2rem;
+    color: var(--text-color);
+    transition: background-color 0.3s ease;
+    min-width: 150px;
+    max-width: 300px;
+}
+
+.App-main {
+    background-color: var(--main-background-color);
+    padding: 2rem;
+    color: var(--text-color);
+    transition: background-color 0.3s ease;
+    min-width: 300px;
+    max-width: 1000px;
+}
+
+.
+
+/* For tablets */
+@media (max-width: 1048px) {
+    .App-content-grid {
+        grid-template-columns: 1fr 2fr;
+    }
+
+    .App {
+        font-size: calc(10px + 1vmin);
+    }
+
+    .App-right-aside {
+        display: none;
+    }
+}
+
+/* For medium small screens */
+@media (max-width: 574px) {
+    .App-content-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .App {
+        font-size: calc(10px + 0.5vmin);
+    }
+
+    .App-left-aside {
+        display: none;
+    }
+}
+
+/* For mobile */
+@media (max-width: 374px) {
+    .App-main {
+        padding: 1rem;
+    }
+
+    .App {
+        font-size: 10px;
+    }
+
+    .App-right-aside {
+        padding: 1rem;
+    }
+}
